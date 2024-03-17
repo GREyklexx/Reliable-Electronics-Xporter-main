@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <link rel="stylesheet" type="text/css" href="ORstyle.css"> 
+    <script src="ORscript.js" defer></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div id="live-feed">
+        <img id="source" src="rex.png" alt="Video Feed" />
+      </div>
+
+      <div id="extra-buttons">
+        <button id="cam-on" onclick="turn('on')">ON</button>
+        <button id="cam-off" onclick="turn('off')">OFF</button>
+      </div>
+      <div class="toggle">
+        <input type="checkbox" id="check" onclick="mode()" />
+        <label for="check" class="toggle-button"></label>
+      </div>
+      <div id="container">
+        <video id="myVideo" autoplay></video>
+        <canvas id="canvas"></canvas>
+        <div id="buttonContainer">
+            <button id="playButton">Pause</button>
+            <button id="overlayButton">Hide Overlay</button>
+        </div>
+        <div id="sourceSelection">
+          <label>
+              <input type="radio" name="source" value="local" checked> Local File
+          </label>
+          <label>
+              <input type="radio" name="source" value="url"> URL
+          </label>
+          <label>
+              <input type="radio" name="source" value="webcam"> Webcam
+          </label>
+          <input type="file" id="fileInput" accept="video/*" style="display: none;">
+          <input type="text" id="urlInput" placeholder="Enter URL" style="display: none;">
+      </div>
+      </div>
+
+    </div>
+
+  <div id="loadingScreen" >
+      Loading...
+  </div>
+  
+      <div class="container">
+        <div class="arr left"><div></div></div>
+        <div class="arr right"><div></div></div>
+        <div class="arr up"><div></div></div>
+        <div class="arr down"><div></div></div>
+      </div>
+
+  </body>
+</html>
